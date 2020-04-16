@@ -18,6 +18,7 @@ function App() {
         >
           Learn React
         </a>
+        <h2>I am new text from the feature branch!</h2>
       </header>
     </div>
   );
