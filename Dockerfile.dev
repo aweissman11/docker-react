@@ -1,0 +1,22 @@
+# To run the container
+# docker run -it -p 3000:3000 CONTAINER_ID
+
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+ENTRYPOINT ["npm", "run"]
+CMD ["start"]
+# CMD ["npm", "run", "start"]
+
+# Add stdin_open property to your docker-compose.yml file
+
+#   web:
+#     stdin_open: true
+# Make sure you rebuild your containers after making this change
+# with  docker-compose down && docker-compose up --build
